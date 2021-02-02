@@ -21,7 +21,7 @@ namespace TisdagsUppgiften
         public static long RunSQL(string s, string p)
         {
             string db = string.Format(connectionString, databaseName);
-            using (var conn = new SqlConnection(connectionString))
+            using (var conn = new SqlConnection(db))
             {
                 conn.Open();
 
@@ -37,7 +37,7 @@ namespace TisdagsUppgiften
         public static DataTable RunSQLDT(string s, string p)
         {
             string db = string.Format(connectionString, databaseName);
-            using (var conn = new SqlConnection(connectionString))
+            using (var conn = new SqlConnection(db))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(s, conn);
