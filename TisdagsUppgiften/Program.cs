@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Diagnostics;
 
 namespace TisdagsUppgiften
 {
@@ -7,13 +8,9 @@ namespace TisdagsUppgiften
     {
         static void Main(string[] args)
         {
-            Console.Write("Insert SQL command:");
-            string command = Console.ReadLine();
-            Console.Write("Insert parameter:"); //behövs inte om man skriver allt i insert SQL command
-            string parameter = Console.ReadLine();
-            DataTable dtb = Databas.RunSQLDT(command, parameter);
-            Databas.ShowTable(dtb);
-            Console.ReadKey();
+           Databas newDatabase = new Databas();
+            newDatabase.Menu();
+           // Databas.SQLQuery();          
         }
 
 
